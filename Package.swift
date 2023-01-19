@@ -12,6 +12,8 @@ let package = Package(
             targets: ["FrameworkSPM"]),
     ],
     dependencies: [
+        .package(path: "Frameworks/MobilePaymentSDK.xcframework"),
+        .package(path: "Frameworks/Kingfisher.xcframework")
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
