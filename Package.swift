@@ -9,11 +9,9 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "FrameworkSPM",
-            targets: ["FrameworkSPM"]),
+            targets: ["FrameworkSPM", "MobilePaymentSDK"]),
     ],
     dependencies: [
-        .package(path: "Frameworks/MobilePaymentSDK.xcframework"),
-        .package(path: "Frameworks/Kingfisher.xcframework")
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
@@ -24,17 +22,9 @@ let package = Package(
             name: "FrameworkSPM",
             dependencies: [],
         resources: [
-            .process("Frameworks/MobilePaymentSDK.xcframework"),
-            .copy("MobilePaymentSDK.xcframework")
         ]),
-        .binaryTarget(
-            name: "MobilePaymentSDK",
-            path: "Frameworks/MobilePaymentSDK.xcframework"
-        ),
-        .binaryTarget(
-            name: "Kingfisher",
-            path: "Frameworks/Kingfisher.xcframework"
-        ),
+        .binaryTarget(name: "MobilePaymentSDK",
+                              path: "artifacts/MobilePaymentSDK.xcframework"),
         .testTarget(
             name: "FrameworkSPMTests",
             dependencies: ["FrameworkSPM"]),
