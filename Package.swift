@@ -10,6 +10,7 @@ let package = Package(
         .library(
             name: "FrameworkSPM",
             targets: ["FrameworkSPM", "MobilePaymentSDK"]),
+        .library(name: "MobilePaymentSDK", targets: ["MobilePaymentSDK"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
