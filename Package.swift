@@ -20,7 +20,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "FrameworkSPM",
-            dependencies: []),
+            dependencies: [],
+        resources: [
+            .process("Frameworks/MobilePaymentSDK.xcframework"),
+            .copy("MobilePaymentSDK.xcframework")
+        ]),
         .binaryTarget(
             name: "MobilePaymentSDK",
             path: "Frameworks/MobilePaymentSDK.xcframework"
