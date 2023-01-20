@@ -10,7 +10,7 @@ let package = Package(
         .library(
             name: "FrameworkSPM",
             targets: ["FrameworkSPM"]),
-        .library(name: "MobilePaymentSDK", targets: ["MobilePaymentSDK"])
+        //.library(name: "MobilePaymentSDK", targets: ["MobilePaymentSDK"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -21,11 +21,15 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "FrameworkSPM",
-            dependencies: [],
-        resources: [
+            dependencies: ["MobilePaymentSDK"]),
+        .binaryTarget(
+            name: "MobilePaymentSDK",
+            path: "artifacts/MobilePaymentSDK.xcframework"
+        ),
+/*  resources: [
         ]),
         .binaryTarget(name: "MobilePaymentSDK",
-                              path: "artifacts/MobilePaymentSDK.xcframework"),
+                              path: "artifacts/MobilePaymentSDK.xcframework"), */
         .testTarget(
             name: "FrameworkSPMTests",
             dependencies: ["FrameworkSPM"]),
