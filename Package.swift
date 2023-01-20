@@ -25,7 +25,7 @@ let package = Package(
             dependencies: ["MobilePaymentSDK"]),
         .binaryTarget(
             name: "MobilePaymentSDK",
-            path: "artifacts/MobilePaymentSDK.xcframework"
+            path: "Sources/artifacts/MobilePaymentSDK.xcframework"
         ),
 /*  resources: [
         ]),
